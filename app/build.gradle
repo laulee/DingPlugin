@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: com.laulee.plugin.DingPlugin
 
 android {
     compileSdkVersion 29
@@ -17,6 +16,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
@@ -29,7 +32,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
+apply plugin: 'com.laulee.dingplugin'
+
 dingMessager {
-    appName '123'
+
+    httpUrl 'https://www.xxxx.com'
+
     content '文案描述'
+
+    dingToken '4c26f0f68d1071c65e1176f9492084b42bed****************'
+
+    atReceiver '130********'
 }

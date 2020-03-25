@@ -1,1 +1,1 @@
-include ':app', ':ding_plugin'
+include ':app', ':buildSrc'
